@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My name is Renata Bandeira Vitoi owner from the e-commerce Santo Varal. An e-commerce for makeup and perfumery.
 
 Things you may want to cover:
 
