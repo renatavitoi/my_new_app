@@ -5,19 +5,38 @@
 .nav
   ul {
   list-style-type: none;
+  width: 100% !important;
   position: fixed;
   width: 100px;
-  padding-top: 60px;
   margin: 0;
-  font-size: 30px;
-  display: block;
+  display: inline;
+  font-size: 8px;
+  padding: 0px;
+  float: left;
+  background-color: #3B0B17;
   }
 
 li {
-  display: inline-block;
+  float: left;
+  display: block;
+  position: relative;
+  list-style-type: none;
+  text-align: center;
   }
 
-h1 h3 {
+li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 12px 14px;
+  color: white;
+  }
+
+  li a:hover {
+    background-color: #111
+    }
+
+h1 h2 h3 {
   font-family: Quicksand, Arial, Helvetica, sans-serif;
   text-align: center;
   color: 	#CD5C5C;
