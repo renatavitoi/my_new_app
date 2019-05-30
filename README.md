@@ -1,6 +1,6 @@
 # README
 
-My name is Renata Bandeira Vitoi owner from the e-commerce Santo Varal. An e-commerce for makeup and perfumery.
+My name is Renata Bandeira Vitoi and this is my first app. An e-commerce for makeup and perfumery called Santo Varal Store.
 
 Things you may want to cover:
 
