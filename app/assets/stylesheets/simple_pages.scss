@@ -4,21 +4,27 @@
 
 .nav
   ul {
-  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   width: 100% !important;
   position: fixed;
-  width: 100px;
-  margin: 0;
   display: inline;
   font-size: 8px;
-  padding: 0px;
   float: left;
   background-color: #3B0B17;
   }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+    }
+
 li {
   float: left;
-  display: block;
+  display: inline-block;
   position: relative;
   list-style-type: none;
   text-align: center;
@@ -26,14 +32,12 @@ li {
 
 li a {
   display: block;
-  text-align: center;
-  text-decoration: none;
-  padding: 12px 14px;
-  color: white;
   }
+
 
   li a:hover {
     background-color: #111
+    color: white;
     }
 
 h1 h2 h3 {
