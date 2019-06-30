@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
@@ -11,7 +12,6 @@
       <%= image_tag(product.image_url, class: "img-fluid") unless product.image_url.nil? %>
       <%= product.name %>
       <%= product.description %>
-      <%= image_tag("eyeshadow1.jpg", class: "img-fluid") %>
       <%= product.colour %>
       <%= product.price %>
       <%= link_to 'Show', product %>
@@ -26,9 +26,3 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
-
-<% paragraph_number = 1 %>
-<% 5.times do %>
-<p> This is paragraph number <%= paragraph_number %></p>
-<% paragraph_number = paragraph_number + 1 %>
-<% end %>
