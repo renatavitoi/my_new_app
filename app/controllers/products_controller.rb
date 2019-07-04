@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+
   # GET /products/1
   # GET /products/1.json
   def show
@@ -25,6 +26,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+
 
     respond_to do |format|
       if @product.save
@@ -60,6 +62,7 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
