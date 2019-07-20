@@ -29,18 +29,22 @@
           <li><%= link_to "About", simple_pages_about_path %></li>
           <li><%= link_to "Contact", simple_pages_contact_path %></li>
           <li><%= link_to "Products", products_path %></li>
-          <li><%= link_to "Show Product", product_path(3) %>
-            <a href="/products/3>Show Product</a>
-        </ul>
+          
+          <form role="form" class="form-inline">
+          <%= form_with(url: products_path, method: 'get', local:true) do |form| %>
+          <%= form.label :q, 'Search for:' %>
+          <%= form.text_field :q, id: 'q', value:params[:q] %>
+          <%= form.submit 'Search' %>
+          </form>
+          <% end %>
+
+
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
+          </ul>
       </div>
     </nav>
-
-      <%= yield %>
-
 
     <footer class="site-footer">
       &copy, 2019 Santo Varal Store

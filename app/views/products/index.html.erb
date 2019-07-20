@@ -1,29 +1,15 @@
 
-<p id="notice"><%= notice %></p>
 
 <h1>Products</h1>
 
 <table>
   <div class="container">
     <div class="row">
-      <% @products.each do |product| %>
-    <div class="col-sm-6 col-md-4">
-        <h1><%= link_to product.name, product %></h1>
-        <p><%= product.description %></p>
-        <p><%= product.colour %></p>
-        <strong>$ <%= product.price %></strong>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', product %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </div><!-- /col -->
-
-        <% end %>
-
-      <%= render plain: @products %>
+      
+      <%= render @products %>
       </div> <!-- end row -->
     </div>  <!-- end container -->
 
-  
 </table>
 <br>
 

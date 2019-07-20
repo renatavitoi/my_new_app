@@ -12,15 +12,30 @@
     </div>
   <% end %>
 
+  <%= form_with(url: '/products', local: true) do |form| %>
+    Form contents
+  <% end %>
+
+<div class="field">
+  <%= form.label :name %><br>
+  <%= form.text_field :name %>
+  </div>
+
   <div class="field">
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <label for="name">Name</label>
+    <input id="product_name" type="text" name="name">
   </div>
 
   <div class="field">
     <%= form.label :description %><br>
     <%= form.text_area :description %>
   </div>
+
+  <div class="actions">
+    <%=form.submit %>
+  </div>
+  <% end %>
+
 
   <div class="field">
     <%= form.label :image_url %><br>
@@ -39,4 +54,25 @@
   <div class="actions">
     <%= form.submit %>
   </div>
-<% end %>
+
+#Contact page
+
+
+<% flash[:notice] %>
+<%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+<div class="row">
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"form-control", placeholder: "Enter Name" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :email %>
+    <% form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :message %>
+      <%= form.text_area :message, class: "form-control", placeholder: "enter Message", rows: 5 %>
+      </div>
+    </div>
+    <%= form.submit "Send", class: "form_label" %>
+    <% end %>
