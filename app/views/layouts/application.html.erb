@@ -29,7 +29,7 @@
           <li><%= link_to "About", simple_pages_about_path %></li>
           <li><%= link_to "Contact", simple_pages_contact_path %></li>
           <li><%= link_to "Products", products_path %></li>
-          
+
           <form role="form" class="form-inline">
           <%= form_with(url: products_path, method: 'get', local:true) do |form| %>
           <%= form.label :q, 'Search for:' %>
@@ -45,6 +45,9 @@
           </ul>
       </div>
     </nav>
+
+<%= yield %>
+
 
     <footer class="site-footer">
       &copy, 2019 Santo Varal Store
