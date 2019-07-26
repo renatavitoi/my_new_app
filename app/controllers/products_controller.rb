@@ -55,8 +55,8 @@ end
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
         redirect_to "/simple_pages/landing_page"
-      end
     end
+  end
 end
   # DELETE /products/1
   # DELETE /products/1.json
@@ -66,6 +66,7 @@ end
       format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -77,4 +78,3 @@ end
     def product_params
       params.require(:product).permit(:name, :description, :image_url, :color, :colour)
     end
-  end

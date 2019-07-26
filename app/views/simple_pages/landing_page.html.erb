@@ -13,7 +13,7 @@
   <%= @products.each do |product| %>
     <div class="carousel-item active">
       <div class="carousel-item"<%= " active" if product == @products.first %>
-        <%= image_tag(product.image_url) %>
+          <%= image_tag(product.image_url) %>
         <div class="carousel-caption d-none d-md-block">
           <%= product.name %>
           <h5>Lip Stick</h5>
@@ -52,6 +52,3 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-
-<%= params[:example_key].to_i * 10 %>
