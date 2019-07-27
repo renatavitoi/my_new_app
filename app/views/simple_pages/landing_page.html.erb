@@ -5,24 +5,27 @@
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" clas="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
    </ol>
-<<div class="carousel-inner">
+<div class="carousel-inner">
   <%= @products.each do |product| %>
     <div class="carousel-item active">
       <div class="carousel-item"<%= " active" if product == @products.first %>
-          <%= image_tag(product.image_url) %>
+        <% if product.image_url %>
+        <%= image_tag(product.image_url) %>
         <div class="carousel-caption d-none d-md-block">
           <%= product.name %>
-          <h5>Lip Stick</h5>
-          <p>Creamy Lipstick</p>
+          <h5>Lipstick</h5>
+          <p>Creamily Lipstick</p>
         </div>
       </div>
+      <% end %>
     </div>
     <div class="carousel-item">
       <div class="carousel-item">
+      <% if product.image_url %>
        <%= image_tag(product.image_url) %>
         <div class="carousel-caption d-none d-md-block">
           <%= product.name %>
@@ -30,9 +33,11 @@
           <p>...</p>
         </div>
       </div>
+      <% end %>
     </div>
     <div class="carousel-item">
       <div class="carousel-item">
+      <% if product.image_url %>
       <%= image_tag(product.image_url) %>
         <div class="carousel-caption d-none d-md-block">
           <%= product.name %>
