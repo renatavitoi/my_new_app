@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
     if params[:q]
      search_term = params[:q]
      @products = Product.search(search_term)
@@ -12,8 +11,8 @@ class ProductsController < ApplicationController
    else
     @products = Product.all
    end
-  end
-end
+ end
+
   # GET /products/1
   # GET /products/1.json
   def show
@@ -44,8 +43,10 @@ end
     end
   end
 
+
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
+
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -78,3 +79,4 @@ end
     def product_params
       params.require(:product).permit(:name, :description, :image_url, :color, :colour)
     end
+end
