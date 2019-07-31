@@ -23,8 +23,9 @@
       </div>
       <% end %>
     </div>
+  <div class="carousel-inner">
+    <%= @products.each do |product| %>
     <div class="carousel-item">
-      <div class="carousel-item">
       <% if product.image_url %>
        <%= image_tag(product.image_url) %>
         <div class="carousel-caption d-none d-md-block">
@@ -35,8 +36,9 @@
       </div>
       <% end %>
     </div>
+  <div class="carousel-inner">
+    <%= @products.each do |product| %>
     <div class="carousel-item">
-      <div class="carousel-item">
       <% if product.image_url %>
       <%= image_tag(product.image_url) %>
         <div class="carousel-caption d-none d-md-block">
