@@ -23,8 +23,6 @@
       </div>
       <% end %>
     </div>
-  <div class="carousel-inner">
-    <%= @products.each do |product| %>
     <div class="carousel-item">
       <% if product.image_url %>
        <%= image_tag(product.image_url) %>
@@ -36,8 +34,6 @@
       </div>
       <% end %>
     </div>
-  <div class="carousel-inner">
-    <%= @products.each do |product| %>
     <div class="carousel-item">
       <% if product.image_url %>
       <%= image_tag(product.image_url) %>
