@@ -7,44 +7,20 @@
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-   </ol>
-<div class="carousel-inner">
-  <%= @products.each do |product| %>
-    <div class="carousel-item active">
-      <div class="carousel-item"<%= " active" if product == @products.first %>
-        <% if product.image_url %>
-        <%= image_tag(product.image_url, class: "img-fluid") %>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+      <% @products.each do |product| %>
+    <div class="carousel-item<%= " active" if product == @products.first %>">
+      <div class="carousel-item">
+        <%  if product.image_url %>
+          <%= image_tag(product.image_url, class: "img-fluid") %>
+            <% end %>
         <div class="carousel-caption d-none d-md-block">
-          <%= product.name %>
-          <h5>Lipstick</h5>
-          <p>Your source for makeup and perfumary.</p>
-        </div>
-      </div>
-      <% end %>
+           <%= product.name %>
+         </div>
     </div>
-    <div class="carousel-item">
-      <% if product.image_url %>
-       <%= image_tag(product.image_url, class: "img-fluid") %>
-        <div class="carousel-caption d-none d-md-block">
-          <%= product.name %>
-          <h5>Eyeshadow</h5>
-          <p>Your source for makeup and perfumary.</p>
-        </div>
-      </div>
-      <% end %>
-    </div>
-    <div class="carousel-item">
-      <% if product.image_url %>
-      <%= image_tag(product.image_url, class:"img-fluid") %>
-        <div class="carousel-caption d-none d-md-block">
-          <%= product.name %>
-          <h5>Perfum</h5>
-          <p>Your source for makeup and perfumary.</p>
-        </div>
-      </div>
-      <% end %>
-    </div>
+    <% end %>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -55,4 +31,3 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<% end %>
