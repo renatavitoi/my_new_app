@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
     @products = Product.search(search_term)
      #return our filtered list here
     else
-    @products = Product.limit(3)
+    @products = Product.all
    end
  end
 
