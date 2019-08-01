@@ -1,8 +1,6 @@
 
 <h1>Welcome to SantoVaral Store</h1>
 <h2>Your source for make-up and perfumary</h2>
-
-
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -11,7 +9,7 @@
   </ol>
   <div class="carousel-inner">
       <% @products.each do |product| %>
-    <div class="carousel-item<%= " active" if product == @products.first %>">
+    <%= " active" if product == @products.first %>
       <div class="carousel-item">
         <%  if product.image_url %>
           <%= image_tag(product.image_url, class: "img-fluid") %>
