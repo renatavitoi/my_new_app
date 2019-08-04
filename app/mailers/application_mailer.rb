@@ -1,3 +1,4 @@
-class ApplicationMailer < ActionMailer::Base.mail(from: "fromdomain.com", to: 'to@domain.com', subject: "Welcome to My Awesome Site", body: 'I  am the email body.').deliver_now
+class ApplicationMailer < ActionMailer::Base
+  default from: "santovaral@gmail.com"
   layout 'mailer'
 end
