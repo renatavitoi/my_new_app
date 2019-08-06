@@ -5,26 +5,20 @@
 
 <%= flash[:notice] %>
 
-
-<%= form_with(url:"/simple_pages/thank_you", method: "post", local:true) do |form| %>
-  <div class="contact column" id="contact">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="w-100"></div>
-      <form>
-      <div class="form-group">
-        <%= form.label :name %>
-        <%= form.text_field :name, class: "form-control", placeholder: "Enter your name" %>
-        </div>
-        <div class="form-group">
-          <%= form.label :email %>
-          <%= form.text_field :email, class: "form-control", placeholder: "Enter your email" %>
-      </div>
-    <div class="form-group">
-      <%= form.label :message %>
-      <%= form.text_area :message, class: "form-control", placeholder: "Enter your message here", rows: 5 %>
-    </div>
+<%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+<div class="row">
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control", placeholder: "Enter your name" %>
   </div>
-  <%= form.submit "Send", class: "form_label" %>
-  <% end %>
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control", placeholder: "Enter your email" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :message %>
+    <%= form.text_area :message, class: "form-control", placeholder: "Enter your message", rows: 5 %>
+  </div>
+</div>
+<%= form.submit "Send", class: "form_label" %>
+<% end %>
