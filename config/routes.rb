@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'simple_pages/landing_page'
   get 'simple_pages/about'
   get 'simple_pages/contact'
+  get 'simple_pages/thank_you'
   get '/products/:users/1', to: 'products#show'
   get '/products', to: 'products#index'
 
