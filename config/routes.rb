@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'simple_pages/about'
   get 'simple_pages/contact'
   get 'simple_pages/thank_you'
+  get 'simple_pages/login'
   get '/products/:users/1', to: 'products#show'
   get '/products', to: 'products#index'
   post 'simple_pages/thank_you'

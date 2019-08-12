@@ -28,6 +28,7 @@
           <li><%= link_to "About", simple_pages_about_path %></li>
           <li><%= link_to "Contact", simple_pages_contact_path %></li>
           <li><%= link_to "Products", products_path %></li>
+          <li><%= link_to "Login", simple_pages_login_path %></li>
 
           <form role="form" class="form-inline">
           <%= form_with(url: products_path, method: 'get', local:true) do |form| %>
@@ -35,15 +36,11 @@
           <%= form.text_field :q, id: 'q', value:params[:q] %>
           <%= form.submit 'Search' %>
           </form>
-
           <% end %>
-
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-    </div>
-  </nav>
+          <ul class="nav navbar-nav navbar-right">
+        </ul>
+        </div>
+      </nav>
 
 <%= yield %>
 
