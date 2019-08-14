@@ -16,13 +16,24 @@ module SampleApp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
+    puts ENV['email']
 
-    config.cache_store = :redis_store, 'redis://localhost:6379/0/cache'
+    secret = ENV['secret']
+    puts secret
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     # Don't generate system test files.
-    config.generators.system_tests = nil
+
+    # View existing config vars
+    heroku config
+
+    # Add/update config vars
+    heroku config:add email=info@example.com secret=321oof
+
+    # Add these if they do not already exist (using whatever mode you wish)
+    heroku config:add RAILS_ENV=production RACK_ENV=production
   end
 end
