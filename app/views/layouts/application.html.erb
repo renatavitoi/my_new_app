@@ -15,33 +15,63 @@
     <%= csrf_meta_tags %>
 
   </head>
-
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">SantoVaralStore</a>
-        </div>
-        <ul class="nav navbar-nav">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "About", simple_pages_about_path %></li>
-          <li><%= link_to "Contact", simple_pages_contact_path %></li>
-          <li><%= link_to "Products", products_path %></li>
-          <li><%= link_to "Login", simple_pages_login_path %></li>
+    <!-- Navbar band -->
+    <nav class="navbar navbar-expand-lg-right navbar-light bg-light">
+      <a class="navbar-header" href="#">SantoVaral Store</a>
+      <div clas="collapse navbar-collapse" id="navbar-content">
+        <div class="container-fluid">
+            <div class="navbar-header">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <%= link_to "Home", root_path %><span class="sr-only">(current)</span>
+                </li>
+                <li class="nav-item active">
+                  <%= link_to "About", simple_pages_about_path %>
+                </li>
+                <li class="nav-item active">
+                  <%= link_to "Contact", simple_pages_contact_path %>
+                </li>
+                <li class="nav-item active">
+                  <%= link_to "Products", products_path %>
+                </li>
+          <div id="user_nav">
+            <% if user_signed_in? %>
+            Signed in as <%= current_user.email %>. This cannot be cheese?
+            <li class="nav-item active">
+              <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+            </li>
+              <% else %>
+            <li class="nav-item active">
+              <% link_to('Login', new_user_session_path) %>
+              </li>
+            <% end %>
+            <li>
+            <form role="form" class="form-inline">
+                <%= form_with(url: products_path, method: 'get', local:true) do |form| %>
+                <%= form.label :q, 'Search for:' %>
+                <%= form.text_field :q, id: 'q', value:params[:q] %>
+                <%= form.submit 'Search' %>
+              </form>
+              <% end %>
+            </li>
+          </ul>
+        </nav> <!-- end nav container -->
+        <div class="container-notices">
+          <% if notice %>
+          <p id="notice" class="alert alert-sucess" role="alert"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+          <p id="alert" class="alert alert-sucess" role="alert"><%= notice %></p>
+        <% end %>
+      </div>
 
-          <form role="form" class="form-inline">
-          <%= form_with(url: products_path, method: 'get', local:true) do |form| %>
-          <%= form.label :q, 'Search for:' %>
-          <%= form.text_field :q, id: 'q', value:params[:q] %>
-          <%= form.submit 'Search' %>
-          </form>
+      <%= yield %>
 
-<%= yield %>
-
-    <footer class="site-footer">
-      &copy, 2019 Santo Varal Store
-    </footer>
+      <footer class="site-footer">
+        &copy, 2019 Santo Varal Store
+      </footer>
 
     </body>
-  </html>
+    </html>
