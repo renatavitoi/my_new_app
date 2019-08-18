@@ -2,30 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.navbar-nav {
-	flex-direction: row;
+* {
+	 box-sizing: border-box;
 	 }
+
+	 .navbar-nav {
+	 	flex-direction: row;
+	 	 }
+
+.nav a:hover {
+	 color: black;
+   }
 
 .navbar-nav li {
 	margin-right: 15px;
 	 }
 
- * {
-	 	box-sizing: border-box;
-	  }
+.navbar-brand {
+	font-size: 1.3em;
+  }
 
-	.nav {
-  	z-index: 1;
-	  }
+.nav {
+  z-index: 1;
+	 }
 
-	.carrousel-caption  {
-    color: #FF0080;
-		font-size: 2rem;
-	  margin: 0 auto;
-	  padding-top: 65px;
-		height: 100px;
-	   }
+.carrousel-caption  {
+  color: #FF0080;
+	font-size: 2rem;
+	margin: 0 auto;
+	padding-top: 65px;
+	height: 100px;
+	 }
 
 .column {
 	width: 33.3333333;
@@ -36,14 +43,4 @@
 
 .button {
 	border-radius: 2px;
-	 }
-	 /* Full-width input fields */
-	 	input[type=text], input[type=password] {
-	 	width: 100%;
-	 	padding: 10px;
-	 	margin: 5px 0 22px 0;
-	 	display: inline-block;
-	 	border: none;
-	 	background: #f1f1f1;
-
 	 }
